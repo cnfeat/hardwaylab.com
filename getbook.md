@@ -1,6 +1,6 @@
 ---
 title: 领取下载
-nav_order: 2
+nav_order: 3
 ---
 
 ## 领取下载
