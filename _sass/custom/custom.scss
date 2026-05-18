@@ -1,0 +1,154 @@
+// ============================================
+// 笨方法实验室 · 颜色系统
+// ============================================
+
+// ---- 基础色板 ----
+:root {
+  --color-white:      #ffffff;
+  --color-black:      #000000;
+  --color-nearblack:  #1a1a1a;
+  --color-grey-100:   #f5f4f2;   // 暖灰底
+  --color-grey-600:   #5c5b58;
+  --color-grey-900:   #2b2a27;
+
+  // 品牌色 — 暖茶墨色，沉稳有手工感
+  --color-brand:      #3d3929;   // 墨茶
+  --color-brand-alt:  #5e5845;   // 浅茶
+  --color-red:        #c0392b;   // 朱砂红（点击反馈）
+  --color-accent:     #b8956a;   // 暖金点缀
+
+  // 语义别名
+  --color-text:       var(--color-nearblack);
+  --color-backdrop:   var(--color-grey-100);
+}
+
+// ---- 全局重置与继承 ----
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-backdrop);
+  color: var(--color-text);
+}
+
+// ---- 排版 ----
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+// ---- 链接 ----
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+  transition: color 0.15s ease-in;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-brand-alt);
+}
+
+a:active {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
+// ---- 覆盖 Just the Docs 侧边栏导航链接 ----
+.nav-list .nav-list-item .nav-list-link {
+  color: var(--color-brand);
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  color: var(--color-brand-alt);
+}
+
+.nav-list .nav-list-item .nav-list-link.active {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+// ---- 按钮 ----
+.btn,
+.button {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-brand);
+  color: var(--color-white);
+  border: 1px solid var(--color-brand-alt);
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease-in;
+}
+
+.btn:hover,
+.button:hover {
+  background: var(--color-brand-alt);
+}
+
+.btn-primary {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-alt);
+  border-color: var(--color-brand-alt);
+}
+
+// ---- 搜索框 ----
+.search-input {
+  border-color: var(--color-grey-600);
+}
+
+.search-input:focus {
+  border-color: var(--color-brand);
+}
+
+// ---- Footer ----
+.site-footer {
+  color: var(--color-grey-600);
+}
+
+// ---- 侧边栏底色微调 ----
+.side-bar {
+  background-color: var(--color-white);
+}
+
+// ---- 代码块 ----
+code {
+  color: var(--color-brand-alt);
+}
+
+// ---- 首页标题放大 ----
+.fs-9 {
+  color: var(--color-brand);
+}
+
+.fs-6 {
+  color: var(--color-grey-600);
+}
+
+// ---- 引用块 ----
+blockquote {
+  border-left-color: var(--color-accent);
+}
+
+// ---- 分割线 ----
+hr {
+  border-color: var(--color-grey-600);
+  opacity: 0.2;
+}
