@@ -11,6 +11,14 @@ theme: just-the-docs
 # 生成 pretty URL（/course/writing/ 而非 /course/writing.html）
 permalink: pretty
 
+# 全局默认布局（关键：确保所有页面套用 Just the Docs 主题框架）
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
 # ---------- 搜索 ----------
 search_enabled: true
 search:
