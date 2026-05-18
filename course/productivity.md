@@ -1,7 +1,6 @@
 ---
 title: 个人生产力发展指南
-parent: 课程产品
-nav_order: 2
+nav_order: 3
 ---
 
 # 《个人生产力发展指南》：成为可能自我

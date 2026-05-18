@@ -1,7 +1,6 @@
 ---
 title: 笨方法学写作
-parent: 课程产品
-nav_order: 1
+nav_order: 2
 ---
 
 # 《笨方法学写作》：这一次彻底学会写作

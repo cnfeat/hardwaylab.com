@@ -1,7 +1,6 @@
 ---
 title: 灵感觉醒100条
-parent: 课程产品
-nav_order: 5
+nav_order: 6
 ---
 
 # 《灵感觉醒100条》：激发灵感行动之法

@@ -1,7 +1,6 @@
 ---
 title: 日课一问100条
-parent: 课程产品
-nav_order: 4
+nav_order: 5
 ---
 
 # 《日课一问100条》：每日勇猛精进之法

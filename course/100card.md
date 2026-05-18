@@ -1,7 +1,6 @@
 ---
 title: 卡片创作100条
-parent: 课程产品
-nav_order: 3
+nav_order: 4
 ---
 
 # 《卡片创作100条》：卡片精华实践之法
