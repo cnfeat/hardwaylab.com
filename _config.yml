@@ -1,12 +1,28 @@
 # 笨方法实验室 — Just the Docs 站点配置
 
 title: 笨方法实验室
-description: 世上无难事，只怕笨方法
+description: 世上无难事，只怕笨方法。为 1% 的实现可能而做长期努力，成为可能自我。
 baseurl: ""
 url: "https://hardwaylab.com"
 
+# 社交媒体分享配置
+github:
+  repository: https://github.com/cnfeat/hardwaylab.com
+  branch: main
+
+twitter:
+  username: "@feat"
+
+og_image: /images/hardwaybook.png
+
+# Google Analytics
+google_analytics: G-EX4S136MJJ
+
 # 主题
 theme: just-the-docs
+
+# 网站图标
+favicon_ico: "/favicon.ico"
 
 # 生成 pretty URL（/course/writing/ 而非 /course/writing.html）
 permalink: pretty
@@ -40,8 +56,8 @@ back_to_top_text: "回到顶部"
 
 # 右上角辅助链接
 aux_links:
-  "GitHub":
-    - "https://github.com/cnfeat/hardwaylab.com"
+  "卡片创作实验室":
+    - "https://cnfeat.com"
 aux_links_new_tab: true
 
 # ---------- 配色 ----------
@@ -60,7 +76,8 @@ callouts:
     color: yellow
 
 # ---------- Footer ----------
-footer_content: "遵循 CC BY-NC 4.0 协议 · Copyright &copy; 笨方法实验室"
+footer_content: "遵循 CC BY-NC 4.0 协议 · 版权所有 © 笨方法实验室"
+footer_links_enabled: false
 
 # ---------- 插件 ----------
 plugins:

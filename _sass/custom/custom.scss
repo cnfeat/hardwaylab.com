@@ -123,6 +123,10 @@ a:active {
   color: var(--color-grey-600);
 }
 
+.site-footer-credits {
+  display: none;
+}
+
 // ---- 侧边栏底色微调 ----
 .side-bar {
   background-color: var(--color-white);
