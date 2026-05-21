@@ -1,25 +1,53 @@
 // ============================================
-// 笨方法实验室 · 颜色系统
+// 笨方法实验室 · 颜色系统 (Zen 配色)
+// 来源: https://github.com/frjo/hugo-theme-zen
+// 极简中性风格，以黑白灰为骨架
 // ============================================
 
 // ---- 基础色板 ----
 :root {
-  --color-white:      #ffffff;
-  --color-black:      #000000;
-  --color-nearblack:  #1a1a1a;
-  --color-grey-100:   #f5f4f2;   // 暖灰底
-  --color-grey-600:   #5c5b58;
-  --color-grey-900:   #2b2a27;
+  // 纯色
+  --color-white:                  #fff;
+  --color-black:                  #010101;
+  --color-nearblack:              #3d3d3f;
+  --color-nearwhite:              #fafafa;
 
-  // 品牌色 — 暖茶墨色，沉稳有手工感
-  --color-brand:      #3d3929;   // 墨茶
-  --color-brand-alt:  #5e5845;   // 浅茶
-  --color-red:        #c0392b;   // 朱砂红（点击反馈）
-  --color-accent:     #b8956a;   // 暖金点缀
+  // 灰色梯度
+  --color-grey-700:               #575757;
+  --color-grey-600:               #7a7a7a;
+  --color-grey-500:               #999;
+  --color-grey-400:               #b5b5b5;
+  --color-grey-300:               #ccc;
+  --color-grey-200:               #e3e3e3;
+  --color-grey-100:               #f2f2f2;
+
+  // 品牌色 — 中性灰黑
+  --color-brand:                  #3d3d3f;   // 主色
+  --color-brand-alt:              #999;      // 次要色
+  --color-brand-light:            #ccc;      // 浅色
+  --color-brand-dark:             #575757;   // 深色
+
+  // 功能色
+  --color-red:                    #dc4a4a;
+  --color-yellow:                 #c59f3d;
+  --color-green:                  #3ea06b;
+  --color-blue:                   #4682b4;
 
   // 语义别名
-  --color-text:       var(--color-nearblack);
-  --color-backdrop:   var(--color-grey-100);
+  --color-text:                   var(--color-nearblack);
+  --color-text-bg:                var(--color-white);
+  --color-text-meta:              var(--color-grey-600);
+  --color-headings:               var(--color-nearblack);
+  --color-backdrop:               var(--color-grey-100);
+  --color-accent:                 var(--color-brand);
+
+  // 透明色
+  --color-black-60:               rgba(0, 0, 0, .6);
+  --color-black-40:               rgba(0, 0, 0, .4);
+  --color-black-20:               rgba(0, 0, 0, .2);
+  --color-black-10:               rgba(0, 0, 0, .1);
+  --color-white-20:               rgba(255, 255, 255, .2);
+  --color-white-10:               rgba(255, 255, 255, .1);
 }
 
 // ---- 全局重置与继承 ----

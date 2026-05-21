@@ -1,0 +1,305 @@
+/* ============================================================
+   Hugo Theme Zen — 独立配色方案
+   来源: https://github.com/frjo/hugo-theme-zen
+   说明: 此文件提取自 Zen 主题的配色系统，可直接用于其他网站。
+   
+   配色特点:
+   - 极简中性风格，以黑白灰为骨架
+   - 使用 OKLCH 现代色彩空间（感知均匀）
+   - 语义化 CSS 变量命名体系
+   
+   使用方式:
+   在 HTML 中引入此文件即可，所有颜色通过 CSS 变量使用。
+   ============================================================ */
+
+:root {
+  /* ============================
+     1. 基础色板 (Base Colours)
+     ============================ */
+
+  /* 黑灰白色系 */
+  --color-black:                  oklch(1% 0.01 0);       /* #010101 */
+  --color-nearblack:              oklch(25% 0.01 0);      /* #3d3d3f */
+  --color-grey-700:               oklch(38% 0 0);         /* #575757 */
+  --color-grey-600:               oklch(49% 0 0);         /* #7a7a7a */
+  --color-grey-500:               oklch(60% 0 0);         /* #999 */
+  --color-grey-400:               oklch(71% 0 0);         /* #b5b5b5 */
+  --color-grey-300:               oklch(80% 0 0);         /* #ccc */
+  --color-grey-200:               oklch(89% 0 0);         /* #e3e3e3 */
+  --color-grey-100:               oklch(95% 0 0);         /* #f2f2f2 */
+  --color-nearwhite:              oklch(98% 0 0);         /* #fafafa */
+  --color-white:                  oklch(100% 0 0);        /* #fff */
+
+  /* 功能色（状态提示） */
+  --color-red:                    oklch(65% 0.2 24);      /* #dc4a4a */
+  --color-yellow:                 oklch(65% 0.12 80);     /* #c59f3d */
+  --color-green:                  oklch(65% 0.19 138);    /* #3ea06b */
+  --color-blue:                   oklch(65% 0.16 247);    /* #4682b4 */
+
+  /* ============================
+     2. 透明色 (Transparent Colours)
+     ============================ */
+
+  --color-black-60:               oklch(0% 0 0 / 0.6);    /* rgba(0,0,0,.6) */
+  --color-black-40:               oklch(0% 0 0 / 0.4);    /* rgba(0,0,0,.4) */
+  --color-black-20:               oklch(0% 0 0 / 0.2);    /* rgba(0,0,0,.2) */
+  --color-black-10:               oklch(0% 0 0 / 0.1);    /* rgba(0,0,0,.1) */
+  --color-white-20:               oklch(100% 0 0 / 0.2);  /* rgba(255,255,255,.2) */
+  --color-white-10:               oklch(100% 0 0 / 0.1);  /* rgba(255,255,255,.1) */
+
+  /* ============================
+     3. 品牌色 (Brand Colours)
+     ============================ */
+
+  --color-brand:                  var(--color-nearblack);       /* #3d3d3f */
+  --color-brand-alt:              var(--color-grey-500);       /* #999 */
+  --color-brand-light:            var(--color-grey-300);       /* #ccc */
+  --color-brand-dark:             var(--color-grey-700);       /* #575757 */
+
+  /* ============================
+     4. 文字色 (Text Colours)
+     ============================ */
+
+  --color-text:                   var(--color-black);          /* #010101 */
+  --color-text-bg:                var(--color-white);          /* #fff */
+  --color-text-meta:              var(--color-grey-600);       /* #7a7a7a (日期/分类等辅助信息) */
+  --color-headings:               var(--color-nearblack);      /* #3d3d3f */
+  --color-code:                   var(--color-nearblack);      /* #3d3d3f */
+
+  /* ============================
+     5. 链接色 (Link Colours)
+     ============================ */
+
+  --color-link:                   var(--color-brand);          /* #3d3d3f */
+  --color-link-visited:           var(--color-brand);          /* #3d3d3f */
+  --color-link-hover:             var(--color-brand-alt);      /* #999 */
+  --color-link-active:            var(--color-red);            /* #dc4a4a */
+
+  /* 深色背景上的反色链接 */
+  --color-link-inverted:          var(--color-white);          /* #fff */
+  --color-link-visited-inverted:  var(--color-white);          /* #fff */
+  --color-link-hover-inverted:    var(--color-white);          /* #fff */
+  --color-link-active-inverted:   var(--color-red);            /* #dc4a4a */
+
+  /* ============================
+     6. 按钮色 (Button Colours)
+     ============================ */
+
+  --color-button:                 var(--color-brand);          /* #3d3d3f */
+  --color-button-hover:           var(--color-brand-alt);      /* #999 */
+  --color-button-text:            var(--color-white);          /* #fff */
+  --color-button-text-hover:      var(--color-white);          /* #fff */
+  --color-button-disabled:        var(--color-grey-400);       /* #b5b5b5 */
+
+  /* ============================
+     7. 边框色 (Border Colours)
+     ============================ */
+
+  --color-border:                 var(--color-brand);          /* #3d3d3f */
+  --color-border-light:           var(--color-brand-light);    /* #ccc */
+  --color-border-dark:            var(--color-brand-dark);     /* #575757 */
+
+  /* ============================
+     8. 背景色 (Background Colours)
+     ============================ */
+
+  --color-header-bg:              var(--color-white);          /* #fff */
+  --color-body-bg:                var(--color-white);          /* #fff */
+  --color-footer-bg:              var(--color-white);          /* #fff */
+  --color-backdrop:               var(--color-grey-100);       /* #f2f2f2 */
+
+  /* ============================
+     9. 移动菜单色 (Mobile Menu)
+     ============================ */
+
+  --color-mobile-menu:            var(--color-brand);          /* #3d3d3f */
+  --color-mobile-menu-cover:      var(--color-black-20);       /* rgba(0,0,0,.2) */
+
+  /* ============================
+     10. 表单色 (Form Colours)
+     ============================ */
+
+  --color-accent:                 var(--color-brand);          /* #3d3d3f */
+
+  /* ============================
+     11. 表格行色 (Table Row)
+     ============================ */
+
+  --color-row-header:             transparent;
+  --color-row-odd:                var(--color-nearwhite);      /* #fafafa */
+  --color-row-even:               transparent;
+
+  /* ============================
+     12. 状态色 (Status / Message)
+     ============================ */
+
+  --color-info:                   var(--color-blue);           /* #4682b4 */
+  --color-info-bg:                oklch(from var(--color-blue) 100% 0.03 h);  /* #f4f8fc */
+  --color-success:                var(--color-green);          /* #3ea06b */
+  --color-success-bg:             oklch(from var(--color-green) 100% 0.03 h); /* #f2faf5 */
+  --color-warning:                var(--color-yellow);         /* #c59f3d */
+  --color-warning-bg:             oklch(from var(--color-yellow) 100% 0.03 h);/* #fcf8f0 */
+  --color-error:                  var(--color-red);            /* #dc4a4a */
+  --color-error-bg:               oklch(from var(--color-red) 100% 0.03 h);   /* #fdf3f3 */
+
+  /* ============================
+     13. 高亮色 (Highlight)
+     ============================ */
+
+  --color-highlight:              var(--color-brand-alt);      /* #999 */
+  --color-mark-highlight:         var(--color-red);            /* #dc4a4a */
+}
+
+
+/* ============================================================
+   使用示例 — 将配色应用到元素上
+   ============================================================ */
+
+/*
+  body {
+    color: var(--color-text);
+    background-color: var(--color-body-bg);
+  }
+
+  a {
+    color: var(--color-link);
+  }
+  a:hover {
+    color: var(--color-link-hover);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-headings);
+  }
+
+  button {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+  }
+  button:hover {
+    background-color: var(--color-button-hover);
+    color: var(--color-button-text-hover);
+  }
+
+  .meta {
+    color: var(--color-text-meta);
+  }
+
+  .message-info {
+    color: var(--color-info);
+    background-color: var(--color-info-bg);
+  }
+  .message-success {
+    color: var(--color-success);
+    background-color: var(--color-success-bg);
+  }
+  .message-warning {
+    color: var(--color-warning);
+    background-color: var(--color-warning-bg);
+  }
+  .message-error {
+    color: var(--color-error);
+    background-color: var(--color-error-bg);
+  }
+
+  table tr:nth-child(odd) {
+    background-color: var(--color-row-odd);
+  }
+
+  ::selection {
+    background-color: var(--color-highlight);
+  }
+  mark {
+    background-color: var(--color-mark-highlight);
+  }
+*/
+
+
+/* ============================================================
+   兼容回退版 (Fallback)
+   如果浏览器不支持 OKLCH，可使用下方十六进制版本
+   ============================================================ */
+
+/*
+:root {
+  --color-black:                  #010101;
+  --color-nearblack:              #3d3d3f;
+  --color-grey-700:               #575757;
+  --color-grey-600:               #7a7a7a;
+  --color-grey-500:               #999;
+  --color-grey-400:               #b5b5b5;
+  --color-grey-300:               #ccc;
+  --color-grey-200:               #e3e3e3;
+  --color-grey-100:               #f2f2f2;
+  --color-nearwhite:              #fafafa;
+  --color-white:                  #fff;
+  --color-red:                    #dc4a4a;
+  --color-yellow:                 #c59f3d;
+  --color-green:                  #3ea06b;
+  --color-blue:                   #4682b4;
+
+  --color-black-60:               rgba(0, 0, 0, .6);
+  --color-black-40:               rgba(0, 0, 0, .4);
+  --color-black-20:               rgba(0, 0, 0, .2);
+  --color-black-10:               rgba(0, 0, 0, .1);
+  --color-white-20:               rgba(255, 255, 255, .2);
+  --color-white-10:               rgba(255, 255, 255, .1);
+
+  --color-brand:                  #3d3d3f;
+  --color-brand-alt:              #999;
+  --color-brand-light:            #ccc;
+  --color-brand-dark:             #575757;
+
+  --color-text:                   #010101;
+  --color-text-bg:                #fff;
+  --color-text-meta:              #7a7a7a;
+  --color-headings:               #3d3d3f;
+  --color-code:                   #3d3d3f;
+
+  --color-link:                   #3d3d3f;
+  --color-link-visited:           #3d3d3f;
+  --color-link-hover:             #999;
+  --color-link-active:            #dc4a4a;
+
+  --color-link-inverted:          #fff;
+  --color-link-visited-inverted:  #fff;
+  --color-link-hover-inverted:    #fff;
+  --color-link-active-inverted:   #dc4a4a;
+
+  --color-button:                 #3d3d3f;
+  --color-button-hover:           #999;
+  --color-button-text:            #fff;
+  --color-button-text-hover:      #fff;
+  --color-button-disabled:        #b5b5b5;
+
+  --color-border:                 #3d3d3f;
+  --color-border-light:           #ccc;
+  --color-border-dark:            #575757;
+
+  --color-header-bg:              #fff;
+  --color-body-bg:                #fff;
+  --color-footer-bg:              #fff;
+  --color-backdrop:               #f2f2f2;
+
+  --color-mobile-menu:            #3d3d3f;
+  --color-mobile-menu-cover:      rgba(0, 0, 0, .2);
+
+  --color-accent:                 #3d3d3f;
+
+  --color-row-header:             transparent;
+  --color-row-odd:                #fafafa;
+  --color-row-even:               transparent;
+
+  --color-info:                   #4682b4;
+  --color-info-bg:                #f4f8fc;
+  --color-success:                #3ea06b;
+  --color-success-bg:             #f2faf5;
+  --color-warning:                #c59f3d;
+  --color-warning-bg:             #fcf8f0;
+  --color-error:                  #dc4a4a;
+  --color-error-bg:               #fdf3f3;
+
+  --color-highlight:              #999;
+  --color-mark-highlight:         #dc4a4a;
+}
+*/
