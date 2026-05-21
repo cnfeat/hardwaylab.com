@@ -7,27 +7,50 @@ search_exclude: true
 sitemap: false
 ---
 
-<h1>404</h1>
+<style>
+  .page-404 {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .page-404 .num {
+    font-size: 6em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-brand, #3d3d3f);
+    opacity: 0.15;
+    margin-bottom: 0;
+  }
+  .page-404 h2 {
+    font-size: 1.6em;
+    margin: 0 0 12px;
+    color: var(--color-nearblack, #3d3d3f);
+    font-weight: 500;
+  }
+  .page-404 p {
+    color: var(--color-text-meta, #7a7a7a);
+    margin-bottom: 32px;
+    font-size: 1em;
+  }
+  .page-404 .btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: var(--color-brand, #3d3d3f);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .page-404 .btn:hover {
+    background: var(--color-brand-alt, #999);
+  }
+</style>
 
-<h2>页面未找到</h2>
-
-<p>你要找的页面不存在。可能已经被删除或地址有误。</p>
-
----
-
-## 你可以
-
-- 使用导航栏查找内容
-- 返回<a href="{{ '/' | relative_url }}">首页</a>探索我们的课程
-- 浏览以下课程：
-
-### 课程推荐
-
-- **[笨方法文化手册](/course/hardwaybook)** — 人生成长系统的核心框架
-- **[卡片创作100讲](/course/card100)** — 100天构建创作系统
-- **[个人生产力发展指南](/course/productivity)** — 产品货架与身份组合
-- **[日课一问](/course/dailyQ)** — 每日三省破局人生
-
----
-
-**世上无难事，只怕笨方法。**
+<div class="page-404">
+  <div class="num">404</div>
+  <h2>页面未找到</h2>
+  <p>你要找的页面可能已被删除或地址有误。</p>
+  <a href="/" class="btn">返回首页</a>
+</div>

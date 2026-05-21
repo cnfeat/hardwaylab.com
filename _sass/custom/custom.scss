@@ -184,3 +184,29 @@ hr {
   border-color: var(--color-grey-600);
   opacity: 0.2;
 }
+
+// ---- 导航分隔：作品 vs 电子书收藏 ----
+.site-nav ul.nav-list > li.nav-list-item:last-child::before {
+  content: '';
+  display: block;
+  margin: 12px 16px 8px;
+  border-top: 1px solid var(--color-grey-300);
+}
+
+// ---- 隐藏侧边栏底部版权 ----
+.side-bar .site-footer {
+  display: none !important;
+}
+
+// ---- 侧边栏与正文区分隔 ----
+.side-bar {
+  border-right: 1px solid var(--color-grey-200);
+}
+
+// ---- 正文顶部搜索栏固定 ----
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: var(--color-white);
+}
