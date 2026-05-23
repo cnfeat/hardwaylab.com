@@ -187,7 +187,9 @@
     </div>
     <button class="back-to-top" onclick="scrollToTop()">↑</button>
     <script>
-        var articles = [];
+        // 简介数据直接内联，瞬间渲染
+        var introArticle = {"filename":"0000_关于这个文集.md","title":"关于这个文集","date":"","body":"<h2 style=\"font-size:1.4em;font-weight:500;color:var(--color-nearblack);margin:1.2em 0 0.6em;font-family:var(--font-heading)\">关于柴静</h2>\n\n柴静，前央视记者、主持人，曾供职于《东方时空》《新闻调查》《看见》等栏目。她以细腻的采访风格和对社会议题的深入关注而广为人知。\n\n她的博客记录了从2006年至2014年间，作为一名新闻记者的所见、所思、所感——从两会现场的奔走追问，到尘肺病村庄的沉重走访；从对拆迁困局的冷静剖析，到对自己内心柔软之处的诚实书写。\n\n<h2 style=\"font-size:1.4em;font-weight:500;color:var(--color-nearblack);margin:1.2em 0 0.6em;font-family:var(--font-heading)\">关于这个文集</h2>\n\n这个文集收录了柴静在新浪博客上公开发表的<strong>433篇文章</strong>，按原始发表时间排序。文章内容涵盖：\n\n两会观察 —— 基层代表的声音，政策背后的细节<br>\n人物侧写 —— 从普通人到公共人物，素描时代的群像<br>\n社会调查 —— 拆迁、尘肺病、教育、医疗……不回避痛点<br>\n个人随笔 —— 对职业、家庭、成长的诚实记录<br>\n节目手记 —— 《新闻调查》《看见》等节目的幕后故事<br>\n\n<h2 style=\"font-size:1.4em;font-weight:500;color:var(--color-nearblack);margin:1.2em 0 0.6em;font-family:var(--font-heading)\">使用说明</h2>\n\n左侧列表按时间排列所有文章。你可以：\n\n点击文章标题阅读全文<br>\n使用搜索框按标题或日期搜索<br>\n点击底部「切换主题」在浅色/深色模式间切换<br>\n\n全文总计约<strong>40余万字</strong>，是柴静作为记者十年职业生涯的文字见证。\n\n<br><hr style=\"border:none;border-top:1px solid var(--color-grey-200);margin:2em 0;\"><br>\n\n本文集仅供学习交流，版权归原作者所有。"};
+        var articles = [introArticle];
 
         function renderArticle(filename) {
             var article = articles.find(function(a) { return a.filename === filename; });
@@ -233,6 +235,7 @@
 
         function generateArticleList() {
             var list = document.getElementById("articleList");
+            list.innerHTML = "";
             var realArticles = articles.filter(function(a) { return a.filename !== "0000_关于这个文集.md"; });
             document.querySelector(".sidebar-header p").textContent = "共 " + realArticles.length + " 篇文章";
             articles.forEach(function(article, index) {
@@ -259,17 +262,20 @@
             });
         }
 
-        // 异步加载文章数据
+        // 立即渲染简介
+        renderArticle("0000_关于这个文集.md");
+        document.querySelector(".sidebar-header p").textContent = "共 433 篇文章";
+
+        // 后台加载其余 433 篇文章
         fetch('articles.json')
           .then(function(r) { return r.json(); })
           .then(function(data) {
-            articles = data;
+            articles = articles.concat(data);
             generateArticleList();
             var hash = window.location.hash.slice(1);
-            if (hash && articles.find(function(a) { return a.filename === hash; })) {
-                renderArticle(hash);
-            } else if (articles.length > 0) {
-                renderArticle(articles[0].filename);
+            if (hash && hash !== "0000_关于这个文集.md") {
+                var match = data.find(function(a) { return a.filename === hash; });
+                if (match) renderArticle(hash);
             }
           });
     </script>
